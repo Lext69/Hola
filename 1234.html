@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta Importante</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        #no {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quieres salir conmigo?</h1>
+        <button id="yes">Sí</button>
+        <button id="no">No</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('no');
+        const yesButton = document.getElementById('yes');
+        const message = document.getElementById('message');
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+            noButton.style.left = x + 'px';
+            noButton.style.top = y + 'px';
+        });
+
+        yesButton.addEventListener('click', () => {
+            message.textContent = "Lo sabía";
+        });
+    </script>
+</body>
+</html>
